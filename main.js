@@ -7,7 +7,12 @@ roverheight=90;
 roverx=10;
 rovery=10;
 
-backgroundimg="mars.jpg";
+roverarray=["Mars1.jpeg", "Mars2.jpeg", "Mars3.jpeg", "Mars4.jpeg", "Mars5.jpeg", "Mars6.jpeg", "Mars7.jpeg","Mars8.jpeg","Mars9.jpeg","Mars10.jpeg"];
+randomnumber=Math.floor(Math.random()*10);
+console.log(randomnumber);
+
+backgroundimg=roverarray[randomnumber];
+console.log("background image = "+ backgroundimg);
 roverimg="rover.png";
 
 function add(){
@@ -53,3 +58,39 @@ if (keypressed=="40")
     console.log("Down");
 }
 }
+function Up(){
+    if (rovery>=0)
+    {
+        rovery=rovery-10;
+        console.log("when up arrow is pressed, x = "+ roverx + " | y = " + rovery);
+        uploadbackground();
+        uploadrover();
+    }
+}
+function Down(){
+    if (rovery<=500)
+    {
+        rovery=rovery+10;
+        console.log("when down arrow is pressed, x = "+ roverx + " | y = " + rovery);
+        uploadbackground();
+        uploadrover();
+    }
+}
+    function Right(){
+        if (roverx<=700)
+        {
+            roverx=roverx+10;
+            console.log("when right arrow is pressed, x = "+ roverx + " | y = " + rovery);
+            uploadbackground();
+            uploadrover();
+        }
+    }
+    function Left(){
+        if (roverx>=0)
+        {
+            roverx=roverx-10;
+            console.log("when left arrow is pressed, x = "+ roverx + " | y = " + rovery);
+            uploadbackground();
+            uploadrover();
+        }
+    }
